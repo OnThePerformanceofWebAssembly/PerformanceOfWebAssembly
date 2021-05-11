@@ -11,3 +11,5 @@ This framework follows a specific folder structure, which guarantees the correct
 Moreover, it must be defined, for each benchmark, how to perform the operations considered.
 
 Next, we explain the folder structure and how to specify, for each language benchmark, the execution of each operation.
+
+#### The Structure
