@@ -17,7 +17,7 @@ The main folder contains 4 elements:
 1. A `Benchmarks` sub-folder, containing a folder for each microbenchmark.
 2. A `PlotsData` sub-folder, containing all the plots generated from jupyter notebook.
 3. A `RAPL` sub-folder, containing the code of the energy measurement framework.
-4. A `emsdk` subfolder, containing [Emscripten](https://github.com/emscripten-core/emsdk) compiler.
+4. A `emsdk` subfolder, containing [Emscripten SDK](https://github.com/emscripten-core/emsdk).
 
 Basically, the directories tree will look something like this:
 
@@ -27,15 +27,24 @@ Basically, the directories tree will look something like this:
 		| Large_dataset
 			| C
 				| Results
+					| benchmarkLARGE1.rapl
+					| benchmarkLARGE1.time
+					| ...
 				| Makefile
 				| benchmark_runLARGE
 			| JS
 				| Results
+					| benchmarkLARGE1.rapl
+					| benchmarkLARGE1.time
+					| ...
 				| Makefile
 				| benchmark_runJS_LARGE.js
 				| benchmark_runJS_LARGE.js.mem
 			| WASM
 				| Results
+					| benchmarkLARGE1.rapl
+					| benchmarkLARGE1.time
+					| ...
 				| Makefile
 				| benchmark_runWASM_Large.js
 				| benchmark_runWASM_Large.wasm
