@@ -17,7 +17,7 @@ The main folder contains 4 elements:
 1. A `Benchmarks` sub-folder, containing a folder for each microbenchmark.
 2. A `PlotsData` sub-folder, containing all the plots generated from jupyter notebook.
 3. A `RAPL` sub-folder, containing the code of the energy measurement framework.
-4. A `emsdk` subfolder, containing the git of [Emscripten](https://github.com/emscripten-core/emsdk).
+4. A `emsdk` subfolder, containing [Emscripten](https://github.com/emscripten-core/emsdk) compiler.
 
 Basically, the directories tree will look something like this:
 
