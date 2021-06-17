@@ -23,8 +23,8 @@ Basically, the directories tree will look something like this:
 
 ```Java
 | Benchmarks
-    | <Benchmark-1>
-	    | Large_dataset
+	| <Benchmark-1>
+		| Large_dataset
 	    	| C
             	| Results
             	| Makefile
@@ -42,7 +42,7 @@ Basically, the directories tree will look something like this:
 	    	| Makefile
 	    	| benchmarkLARGE.csv
 		| Medium_dataset
-	    	| ...
+			| ...
     	| Small_dataset
 	    	| ...
 		benchmark.c
