@@ -25,26 +25,26 @@ Basically, the directories tree will look something like this:
 | Benchmarks
 	| <Benchmark-1>
 		| Large_dataset
-	    	| C
-            	| Results
-            	| Makefile
-            	| benchmark_runLARGE
-	    	| JS
-            	| Results
-            	| Makefile
-            	| benchmark_runJS_LARGE.js
-            	| benchmark_runJS_LARGE.js.mem
-	    	| WASM
-            	| Results
-            	| Makefile
-            	| benchmark_runWASM_Large.js
-            	| benchmark_runWASM_Large.wasm
-	    	| Makefile
-	    	| benchmarkLARGE.csv
+			| C
+				| Results
+				| Makefile
+				| benchmark_runLARGE
+			| JS
+				| Results
+				| Makefile
+				| benchmark_runJS_LARGE.js
+				| benchmark_runJS_LARGE.js.mem
+			| WASM
+				| Results
+				| Makefile
+				| benchmark_runWASM_Large.js
+				| benchmark_runWASM_Large.wasm
+			| Makefile
+			| benchmarkLARGE.csv
 		| Medium_dataset
 			| ...
-    	| Small_dataset
-	    	| ...
+		| Small_dataset
+			| ...
 		benchmark.c
 		datasets.h
 		inputgen.c
