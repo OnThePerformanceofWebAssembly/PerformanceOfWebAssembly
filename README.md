@@ -77,9 +77,9 @@ To understand how this system works let's add and run an example.
 
 2. In [`ExampleFolder`](https://github.com/OnThePerformanceofWebAssembly/PerformanceOfWebAssembly/tree/main/Benchmarks/ExampleFolder) (change its name if you want to) replace `example.c` for `fibonacci.c`.
 
-3. Deal with input. The microbenchmarks can´t receive input as an argument, so, we need to add the three differents inputs sizes in a header called `datasets.h`. For example, if we want the `Small`, `Medium` and `Large` inputs to be 1, 2 and 3, respectively, the `datasets.h` will be like this:
+3. Deal with input. The microbenchmarks can´t receive input as an argument, so, you need to add the three differents inputs sizes in a header called `datasets.h`. For example, if you want the `Small`, `Medium` and `Large` inputs to be 1, 2 and 3, respectively, the `datasets.h` will be like this:
 
-```
+```Java
 #ifdef SMALL_DATASET
 #define INPUT 1
 #endif
@@ -99,3 +99,11 @@ To understand how this system works let's add and run an example.
 #define INPUT 2
 #endif
 ```
+
+4. Now you just need to change the input that was received as an argument `argv[1]` for `Input`, like this:
+
+	**Before:** `int n = argv[1];`
+	
+	**After:** `int n = INPUT;`
+
+5. The next step is the preparation of all the Makefiles inside `ExampleFolder`. In each benchmark, you need to replace all `example.c` for the name of your benchmark, in this case, `fibonacci.c`.
