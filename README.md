@@ -132,3 +132,12 @@ To understand how this system works let's add and run an example.
 		make sum
 
 	This will create the `fibonacci.csv` file with all the measure values using the `cleanresults.py` script from `RAPL` folder.
+
+#### IMPORTANT NOTE:
+The `Makefiles` have specified, for some cases, the path for the language's compiler/runner. 
+It is most likely that you will not have them in the same path of your machine.
+If you would like to properly test every benchmark of every language, please make sure you have all compilers/runners installed, and adapt the `Makefiles` accordingly.
+
+### Contacts and References
+
+[Green Software Lab](http://greenlab.di.uminho.pt)
