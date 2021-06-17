@@ -65,7 +65,6 @@ Basically, the directories tree will look something like this:
 | Plotsdata
 | RAPL
 | compile_all.py
-| gen-input.sh
 
 ```
 
@@ -100,10 +99,36 @@ To understand how this system works let's add and run an example.
 #endif
 ```
 
-4. Now you just need to change the input that was received as an argument `argv[1]` for `Input`, like this:
+4. Now you just need to change the input that was received as an argument `argv[1]` for `Input`, like this (don't forget to add `#include "datasets.h"`):
 
 	**Before:** `int n = argv[1];`
 	
 	**After:** `int n = INPUT;`
 
 5. The next step is the preparation of all the Makefiles inside `ExampleFolder`. In each benchmark, you need to replace all `example.c` for the name of your benchmark, in this case, `fibonacci.c`.
+
+6. Compile. For this, go to the `Makefile` in `ExampleFolder` and check if all the commands are right. Then just run the following command:
+		
+		make compileall
+
+7. Now all the executables were created in the right directories. To check if the programs run perfectly, for example the `fibonacci_runLARGE.js`, you can go to `ExampleFolder/Medium_dataset/JS/` and run the command:
+		
+		make run
+
+	If all works perfectly, you are ready to measure the performance of each language size, one by one.
+
+8. Let's take as example the `LARGE` input. In order to run the program with the `C` language, you need to go to `ExampleFolder/Large_dataset/C/` and open two terminals. In one terminal, you need to run the `RAPL Server`, and, for that, you need to execute the following command:
+
+		make raplserver
+
+	On the other terminal, you need to run the `RAPL Client` with the following command:
+
+		make raplclient
+
+	By default, this will run the `fibonacci_runLARGE` 10 times. If you want to change that, just go to the `Results` folder and change the `Makefile`
+
+9. In this moment you created in the `Results` folder all the `.time` and `.rapl` files of each execution. Now you just need to do the same for `JS` and `WASM`. After doing that, you go to the `ExampleFolder/Large_dataset` and run:
+
+		make sum
+
+	This will create the `fibonacci.csv` file with all the measure values
