@@ -7,7 +7,7 @@ This repo contains the source code of 10 distinct benchmarks, implemented in Web
 
 ### How is it structured and hows does it work?
 
-This framework follows a specific folder structure, which guarantees the correct workflow when the goal is to perform and operation for all benchmarks at once.
+This framework follows a specific folder structure, which guarantees the correct workflow when the goal is to perform and operation for all benchmarks.
 Moreover, it must be defined, for each benchmark, how to perform the operations considered.
 
 Next, we explain the folder structure and how to specify, for each language benchmark, the execution of each operation.
@@ -59,10 +59,43 @@ Basically, the directories tree will look something like this:
 		inputgen.c
 		Makefile
 	| ...
+	| <Benchmark-10>
+	| ExampleFolder
 | emsdk
 | Plotsdata
 | RAPL
 | compile_all.py
 | gen-input.sh
 
+```
+
+### Running an example.
+
+To understand how this system works let's add and run an example.
+
+1. Take a microbenchmark in language C, for example, `fibonacci.c`.
+
+2. In [`ExampleFolder`](https://github.com/OnThePerformanceofWebAssembly/PerformanceOfWebAssembly/tree/main/Benchmarks/ExampleFolder) (change its name if you want to) replace `example.c` for `fibonacci.c`.
+
+3. Deal with input. The microbenchmarks can´t receive input as an argument, so, we need to add the three differents inputs sizes in a header called `datasets.h`. For example, if we want the `Small`, `Medium` and `Large` inputs to be 1, 2 and 3, respectively, the `datasets.h` will be like this:
+
+```
+#ifdef SMALL_DATASET
+#define INPUT 1
+#endif
+#ifdef LARGE_DATASET
+#define INPUT 3
+#endif
+
+#ifndef SMALL_DATASET
+  #ifndef LARGE_DATASET
+    #ifndef MEDIUM_DATASET
+      #define MEDIUM_DATASET
+    #endif
+  #endif
+#endif
+
+#ifdef MEDIUM_DATASET
+#define INPUT 2
+#endif
 ```
