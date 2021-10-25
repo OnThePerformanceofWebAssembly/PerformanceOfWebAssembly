@@ -1,0 +1,7 @@
+Browser,Language,Package,CPU,DRAM,Time
+GoogleChrome,JS,217.896,188.420,15.486,4.024
+MicrosoftEdge,JS,258.503,229.256,15.224,5.031
+MozillaFirefox,JS,405.466,374.042,19.668,5.462
+GoogleChrome,WASM,218.267,188.962,16.073,4.227
+MicrosoftEdge,WASM,266.103,236.712,16.181,5.256
+MozillaFirefox,WASM,391.873,361.222,19.959,5.496
